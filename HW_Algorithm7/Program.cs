@@ -7,19 +7,7 @@ namespace HW_Algorithm7
         const int N = 5;
         const int M = 7;
 
-        static void Print2(int n, int m, int[,] a)
-        {
-            int i, j;
-            for (i = 0; i < n; i++)
-            {
-                Console.WriteLine("_______________________________________________________________");
-                for (j = 0; j < m; j++)
-                    Console.Write(" | " + String.Format("{0,3}", a[i, j]) + " | ");
-                Console.Write("\r\n");
-            }
-            Console.WriteLine($"количество путей до правой нижней клетки = {a[N - 1, M - 1]}");
-        }
-
+        
         static void Main(string[] args)
         {
             int[,] A = new int[N, M];
@@ -48,9 +36,9 @@ namespace HW_Algorithm7
 
 
 
-            Print2(N, M, A);
+            Print.PrintSimple(N, M, A);
 
-            Print2(N, M, W);
+            Print.PrintWithBarriers(N, M, W);
         }
     }
 }
