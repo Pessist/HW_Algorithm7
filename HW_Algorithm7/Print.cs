@@ -33,7 +33,18 @@ namespace HW_Algorithm7
             {
                 Console.WriteLine("_______________________________________________________________");
                 for (j = 0; j < m; j++)
-                    Console.Write(" | " + String.Format("{0,3}", a[i, j]) + " | ");
+                {
+                    if (a[i, j] == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red; // устанавливаем красный цвет шрифта
+                        Console.Write(" | " + String.Format("{0,3}", a[i, j]) + " | ");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.Write(" | " + String.Format("{0,3}", a[i, j]) + " | ");
+                    }
+                }
                 Console.Write("\r\n");
             }
             Console.WriteLine($"\nКоличество путей до правой нижней клетки с препятствиями = {a[N - 1, M - 1]}");
